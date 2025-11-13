@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <style>
+    /* Background and font setup */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #6B7C6D; /* muted slate/green */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* "Coming Soon" text */
+    h1 {
+      color: #D4AF37; /* gold */
+      font-size: 4rem;
+      text-align: center;
+      letter-spacing: 2px;
+    }
+
+    /* Optional: subtle shadow for elegance */
+    h1::after {
+      content: '';
+      display: block;
+      height: 4px;
+      width: 80px;
+      margin: 20px auto 0;
+      background-color: #D4AF37;
+      opacity: 0.6;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>COMING SOON</h1>
+</body>
+</html>
