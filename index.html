@@ -45,7 +45,6 @@
         
         /* --- HERO SECTION (COVER PHOTO) --- */
         header {
-            /* This overlays a dark transparent layer on top of cover.jpg so text is readable */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('cover.jpg');
             background-size: cover;
             background-position: center;
@@ -163,6 +162,54 @@
             margin-bottom: 8px;
         }
 
+        /* --- CONTACT FORM STYLES (NEW) --- */
+        .contact-form {
+            background: var(--white);
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--dewalt-yellow);
+            outline: none;
+        }
+        .submit-btn {
+            background-color: var(--dewalt-black);
+            color: var(--white); /* White text */
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #333;
+            color: var(--dewalt-yellow); /* Yellow text on hover */
+        }
+
         /* --- HOW TO BOOK --- */
         .step-list {
             list-style: none;
@@ -217,7 +264,7 @@
         <h1>Handyman for Harrogate</h1>
         <div class="subtitle">Evening & Weekend Appointments Available</div>
         <p class="hero-text">I fix your home outside of office hours, so you don’t have to take time off work.</p>
-        <a href="mailto:jack@theyorkshirefixer.co.uk" class="cta-button">Get a Quote</a>
+        <a href="#contact" class="cta-button">Get a Quote</a>
     </header>
 
     <section>
@@ -264,14 +311,40 @@
         </section>
     </div>
 
-    <section>
+    <section id="contact">
         <h2>How to Book</h2>
-        <p>I like to keep things simple. You don't need a home visit just to get a price.</p>
+        <p>I like to keep things simple. You can message me via WhatsApp, or fill out the form below to send a query directly to my email.</p>
+        
         <ul class="step-list">
             <li><strong>1. Snap a photo</strong> of the job or make a quick list.</li>
             <li><strong>2. WhatsApp or Email</strong> it to me.</li>
             <li><strong>3. Get a price</strong> and a time slot.</li>
         </ul>
+
+        <div class="contact-form">
+            <h3 style="margin-top:0;">Request a Quote</h3>
+            
+            <form action="https://formspree.io/f/mykyrkvp" method="POST">
+                
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" placeholder="John Smith" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Email / Phone</label>
+                    <input type="text" name="contact" placeholder="Email or Mobile Number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Description</label>
+                    <textarea name="message" rows="5" placeholder="Describe what you need doing (e.g. '3 IKEA wardrobes to build' or 'Leaking tap in kitchen')..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Query</button>
+            </form>
+        </div>
+
     </section>
 
     <footer>
