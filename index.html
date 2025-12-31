@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <style>
+        /* --- CSS VARIABLES & RESET --- */
         :root {
             --dewalt-yellow: #febd17;
             --dewalt-black: #1a1a1a;
@@ -16,143 +17,206 @@
             --white: #ffffff;
             --light-grey: #f4f4f4;
         }
+        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: var(--slate);
+            background-color: var(--white);
         }
-        /* Navigation */
+
+        /* --- NAVIGATION --- */
         nav {
             background: var(--dewalt-black);
             color: var(--dewalt-yellow);
             padding: 1rem;
             text-align: center;
-            font-weight: bold;
+            font-weight: 800;
             font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         
-        /* UPDATED HERO SECTION */
+        /* --- HERO SECTION (COVER PHOTO) --- */
         header {
-            /* This assumes your image is named cover.jpg */
+            /* This overlays a dark transparent layer on top of cover.jpg so text is readable */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('cover.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 6rem 1rem; /* Increased padding for better visibility of the photo */
+            padding: 5rem 1rem;
             text-align: center;
         }
+
         h1 {
             margin: 0;
             font-size: 2.5rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8); /* Added shadow to make text pop against tools */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
+
         .subtitle {
-            font-size: 1.4rem;
-            margin-top: 10px;
+            font-size: 1.3rem;
+            margin-top: 15px;
+            margin-bottom: 10px;
             color: var(--dewalt-yellow);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
+
+        .hero-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
         .cta-button {
             display: inline-block;
             background-color: var(--dewalt-yellow);
             color: var(--dewalt-black);
-            padding: 15px 30px;
+            padding: 15px 35px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 25px;
+            font-weight: 800;
+            border-radius: 4px;
+            margin-top: 30px;
             text-transform: uppercase;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s, background-color 0.2s;
         }
+
         .cta-button:hover {
             background-color: #e6a800;
-            transform: translateY(-2px); /* Subtle lift effect on hover */
+            transform: translateY(-2px);
         }
 
-        /* Sections */
+        /* --- GENERAL SECTIONS --- */
         section {
             padding: 3rem 1rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-        }
-        .bg-light {
-            background-color: var(--light-grey);
-            width: 100%;
-            max-width: 100%; /* Full width background */
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        h2 {
-            color: var(--dewalt-black);
-            border-bottom: 3px solid var(--dewalt-yellow);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Service Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .service-card {
-            background: var(--white);
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--dewalt-yellow);
         }
 
-        /* Hours Box */
+        h2 {
+            color: var(--dewalt-black);
+            border-bottom: 4px solid var(--dewalt-yellow);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding-bottom: 5px;
+        }
+
+        /* --- HOURS BOX --- */
         .hours-box {
             background: var(--dewalt-black);
             color: var(--white);
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border-left: 6px solid var(--dewalt-yellow);
+        }
+        .hours-box p {
+            margin: 5px 0;
+            font-size: 1.1rem;
         }
         .hours-box strong {
             color: var(--dewalt-yellow);
         }
 
-        /* Contact Footer */
+        /* --- SERVICES GRID --- */
+        .bg-light {
+            background-color: var(--light-grey);
+            width: 100%;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            border-bottom: 4px solid var(--dewalt-yellow);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            color: var(--dewalt-black);
+        }
+
+        .service-card ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .service-card li {
+            margin-bottom: 8px;
+        }
+
+        /* --- HOW TO BOOK --- */
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+        .step-list li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--dewalt-yellow);
+        }
+
+        /* --- FOOTER --- */
         footer {
             background: var(--dewalt-black);
             color: var(--white);
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
+        
+        footer h2 {
+            color: var(--white);
+            border-bottom: none;
+        }
+
         footer a {
             color: var(--dewalt-yellow);
             text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         
-        /* Mobile Tweaks */
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            header { padding: 3rem 1rem; }
+            h1 { font-size: 2rem; }
+            header { padding: 4rem 1rem; }
+            .cta-button { width: 100%; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        THE YORKSHIRE FIXER
+        The Yorkshire Fixer
     </nav>
 
     <header>
         <h1>Handyman for Harrogate</h1>
-        <p class="subtitle">Evening & Weekend Appointments Available</p>
-        <p>I fix your home outside of office hours, so you don’t have to take time off work.</p>
+        <div class="subtitle">Evening & Weekend Appointments Available</div>
+        <p class="hero-text">I fix your home outside of office hours, so you don’t have to take time off work.</p>
         <a href="mailto:jack@theyorkshirefixer.co.uk" class="cta-button">Get a Quote</a>
     </header>
 
@@ -169,7 +233,7 @@
     </section>
 
     <div class="bg-light">
-        <section class="container">
+        <section>
             <h2>What I Do</h2>
             <div class="services-grid">
                 <div class="service-card">
@@ -184,7 +248,7 @@
                     <h3>🏠 Repairs & Maintenance</h3>
                     <ul>
                         <li>Patch repairs & painting</li>
-                        <li>Door handles & hinges</li>
+                        <li>Door handles, hinges & locks</li>
                         <li>Outdoor fixes & maintenance</li>
                     </ul>
                 </div>
@@ -203,18 +267,19 @@
     <section>
         <h2>How to Book</h2>
         <p>I like to keep things simple. You don't need a home visit just to get a price.</p>
-        <ol>
-            <li><strong>Snap a photo</strong> of the job or make a quick list.</li>
-            <li><strong>WhatsApp or Email</strong> it to me.</li>
-            <li><strong>Get a price</strong> and a time slot.</li>
-        </ol>
+        <ul class="step-list">
+            <li><strong>1. Snap a photo</strong> of the job or make a quick list.</li>
+            <li><strong>2. WhatsApp or Email</strong> it to me.</li>
+            <li><strong>3. Get a price</strong> and a time slot.</li>
+        </ul>
     </section>
 
     <footer>
         <h2>Ready to clear your list?</h2>
         <p>📞 <a href="tel:07517738680">07517 738680</a></p>
         <p>✉️ <a href="mailto:jack@theyorkshirefixer.co.uk">jack@theyorkshirefixer.co.uk</a></p>
-        <p><small>&copy; 2025 The Yorkshire Fixer</small></p>
+        <br>
+        <p><small>&copy; 2025 The Yorkshire Fixer. Covering Harrogate & Surrounding Areas.</small></p>
     </footer>
 
 </body>
