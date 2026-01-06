@@ -1,4 +1,4 @@
-/* --- CSS VARIABLES & RESET --- */ 
+/* --- CSS VARIABLES & RESET --- */
 :root {
     --dewalt-yellow: #febd17;
     --dewalt-black: #1a1a1a;
@@ -134,7 +134,7 @@ h2 {
     margin-top: 25px;
     border-left: 6px solid var(--dewalt-yellow);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
 }
 
@@ -154,12 +154,6 @@ h2 {
 
 .trust-item strong {
     color: var(--dewalt-yellow);
-}
-
-@media (max-width: 500px) {
-    .trust-box {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* --- SERVICES GRID --- */
@@ -282,7 +276,7 @@ h2 {
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.4rem; /* Adjusted for Font Awesome icons */
+    font-size: 1.4rem;
 }
 
 .social-link:hover {
@@ -324,4 +318,5 @@ footer p {
     header { padding: 4rem 1rem; }
     .cta-button { width: 100%; text-align: center; }
     .about-container { text-align: center; }
+    .trust-box { grid-template-columns: 1fr; }
 }
