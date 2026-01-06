@@ -7,252 +7,7 @@
     <meta name="description" content="Reliable handyman in Harrogate working evenings and weekends. Flat pack assembly, repairs, mounting, and maintenance. No job too small.">
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --dewalt-yellow: #febd17;
-            --dewalt-black: #1a1a1a;
-            --slate: #333;
-            --white: #ffffff;
-            --light-grey: #f4f4f4;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: var(--slate);
-            background-color: var(--white);
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background: var(--dewalt-black);
-            color: var(--dewalt-yellow);
-            padding: 1rem;
-            text-align: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        
-        /* --- HERO SECTION (COVER PHOTO) --- */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('cover.jpg');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 5rem 1rem;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            margin-top: 15px;
-            margin-bottom: 10px;
-            color: var(--dewalt-yellow);
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-        }
-
-        .hero-text {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--dewalt-yellow);
-            color: var(--dewalt-black);
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: 800;
-            border-radius: 4px;
-            margin-top: 30px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: #e6a800;
-            transform: translateY(-2px);
-        }
-
-        /* --- GENERAL SECTIONS --- */
-        section {
-            padding: 3rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            color: var(--dewalt-black);
-            border-bottom: 4px solid var(--dewalt-yellow);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            padding-bottom: 5px;
-        }
-
-        /* --- HOURS BOX --- */
-        .hours-box {
-            background: var(--dewalt-black);
-            color: var(--white);
-            padding: 25px;
-            border-radius: 8px;
-            margin-top: 25px;
-            border-left: 6px solid var(--dewalt-yellow);
-        }
-        .hours-box p {
-            margin: 5px 0;
-            font-size: 1.1rem;
-        }
-        .hours-box strong {
-            color: var(--dewalt-yellow);
-        }
-
-        /* --- SERVICES GRID --- */
-        .bg-light {
-            background-color: var(--light-grey);
-            width: 100%;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 25px;
-            border-radius: 6px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            border-bottom: 4px solid var(--dewalt-yellow);
-        }
-
-        .service-card h3 {
-            margin-top: 0;
-            color: var(--dewalt-black);
-        }
-
-        .service-card ul {
-            padding-left: 20px;
-            margin-bottom: 0;
-        }
-        
-        .service-card li {
-            margin-bottom: 8px;
-        }
-
-        /* --- CONTACT FORM STYLES (NEW) --- */
-        .contact-form {
-            background: var(--white);
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input, 
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        .form-group input:focus, 
-        .form-group textarea:focus {
-            border-color: var(--dewalt-yellow);
-            outline: none;
-        }
-        .submit-btn {
-            background-color: var(--dewalt-black);
-            color: var(--white); /* White text */
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #333;
-            color: var(--dewalt-yellow); /* Yellow text on hover */
-        }
-
-        /* --- HOW TO BOOK --- */
-        .step-list {
-            list-style: none;
-            padding: 0;
-        }
-        .step-list li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            padding-left: 10px;
-            border-left: 3px solid var(--dewalt-yellow);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--dewalt-black);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-        
-        footer h2 {
-            color: var(--white);
-            border-bottom: none;
-        }
-
-        footer a {
-            color: var(--dewalt-yellow);
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        footer p {
-            margin: 10px 0;
-        }
-
-        /* --- MOBILE TWEAKS --- */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            header { padding: 4rem 1rem; }
-            .cta-button { width: 100%; text-align: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -276,6 +31,19 @@
             <p>🕒 <strong>Weekdays:</strong> 6pm – 10pm</p>
             <p>🕒 <strong>Weekends:</strong> Flexible</p>
             <p>✅ <strong>Fully Insured</strong></p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="1000009575.jpg" alt="Jack and his apprentice">
+            </div>
+            <div class="about-text">
+                <h2>About The Yorkshire Fixer</h2>
+                <p>Hi, I'm Jack. Beyond being your local Harrogate handyman, I’m a proud family man. I know how hard it is to balance a busy career with home maintenance and family time.</p>
+                <p>I work evenings and weekends so that you don't have to take time off work to wait for a tradesman. When you book me, you’re supporting a local family business that values reliability, safety, and a job well done.</p>
+            </div>
         </div>
     </section>
 
@@ -323,28 +91,22 @@
 
         <div class="contact-form">
             <h3 style="margin-top:0;">Request a Quote</h3>
-            
             <form action="https://formspree.io/f/mykyrkvp" method="POST">
-                
                 <div class="form-group">
                     <label>Your Name</label>
                     <input type="text" name="name" placeholder="John Smith" required>
                 </div>
-                
                 <div class="form-group">
                     <label>Your Email / Phone</label>
                     <input type="text" name="contact" placeholder="Email or Mobile Number" required>
                 </div>
-
                 <div class="form-group">
                     <label>Job Description</label>
-                    <textarea name="message" rows="5" placeholder="Describe what you need doing (e.g. '3 IKEA wardrobes to build' or 'Leaking tap in kitchen')..." required></textarea>
+                    <textarea name="message" rows="5" placeholder="Describe what you need doing..." required></textarea>
                 </div>
-
                 <button type="submit" class="submit-btn">Send Query</button>
             </form>
         </div>
-
     </section>
 
     <footer>
@@ -354,6 +116,18 @@
         <br>
         <p><small>&copy; 2025 The Yorkshire Fixer. Covering Harrogate & Surrounding Areas.</small></p>
     </footer>
+
+    <div class="floating-socials">
+        <a href="https://wa.me/447517738680" class="social-link wa" title="Message on WhatsApp" target="_blank">
+            <span>💬</span>
+        </a>
+        <a href="https://facebook.com/yourpage" class="social-link fb" title="Visit Facebook" target="_blank">
+            <span>f</span>
+        </a>
+        <a href="mailto:jack@theyorkshirefixer.co.uk" class="social-link em" title="Send an Email">
+            <span>✉️</span>
+        </a>
+    </div>
 
 </body>
 </html>
