@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://theyorkshirefixer.co.uk/sitemap.xml
